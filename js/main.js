@@ -8,18 +8,38 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initCategoryTabs() {
-  const tabs = document.querySelectorAll('.category-tab');
+  const tabs = [...document.querySelectorAll('.category-tab[role="tab"]')];
   if (!tabs.length) return;
 
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      tabs.forEach((t) => t.classList.remove('active'));
-      tab.classList.add('active');
+  function activate(tab) {
+    tabs.forEach((t) => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+      t.setAttribute('tabindex', '-1');
     });
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    tab.setAttribute('tabindex', '0');
+    tab.focus();
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => activate(tab));
+
     tab.addEventListener('keydown', (e) => {
-      if (e.key === ' ' || e.key === 'Enter') {
+      const idx = tabs.indexOf(document.activeElement);
+      if (e.key === 'ArrowRight') {
         e.preventDefault();
-        tab.click();
+        activate(tabs[(idx + 1) % tabs.length]);
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        activate(tabs[(idx - 1 + tabs.length) % tabs.length]);
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        activate(tabs[0]);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        activate(tabs[tabs.length - 1]);
       }
     });
   });
@@ -48,7 +68,11 @@ function initActiveNav() {
   const normPath = currentPath.replace(/^\//, '').split('?')[0].split('#')[0];
 
   document.querySelectorAll('.nav__link, .nav__pill').forEach((link) => {
-    if (link.classList.contains('active')) return;
+    // If already marked active in HTML, ensure aria-current is set too
+    if (link.classList.contains('active') || link.getAttribute('aria-current') === 'page') {
+      link.setAttribute('aria-current', 'page');
+      return;
+    }
 
     const href = link.getAttribute('href');
     if (!href || href.startsWith('#') || href.startsWith('http')) return;
@@ -61,6 +85,7 @@ function initActiveNav() {
 
     if (normPath && normPath === normHref) {
       link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
     }
   });
 }
@@ -156,5 +181,5 @@ function initHeaderScroll() {
   };
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); // run once on load in case page is already scrolled
+  onScroll();
 }

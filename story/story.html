@@ -10,26 +10,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="header" role="banner">
         <div class="container">
             <div class="header__content">
-                <a href="../index.html" class="logo">
-                    <img src="../assets/logo.svg" alt="StoryCast Logo" width="48" height="48">
+                <a href="../index.html" class="logo" aria-label="StoryCast home">
+                    <img src="../assets/logo.svg" alt="" width="48" height="48">
                 </a>
 
-                <nav class="nav">
-                    <a href="story.html" class="nav__link">Discover</a>
+                <nav class="nav" aria-label="Main navigation">
+                    <a href="story.html" class="nav__link" aria-current="page">Discover</a>
                     <a href="#categories" class="nav__link">categories</a>
                     <a href="../about/about.html" class="nav__link">about</a>
                 </nav>
 
                 <div class="header__actions">
-                    <search class="search">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <search class="search" role="search">
+                        <label for="site-search-story" class="visually-hidden">Search StoryCast</label>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                             <path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M14 14L11.1 11.1" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <input type="search" placeholder="Search" class="search__input">
+                        <input type="search" id="site-search-story" placeholder="Search" class="search__input">
                     </search>
                     <a href="/signin" class="btn-signin">sign in</a>
                 </div>
@@ -37,18 +39,19 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Audio Story Section -->
-        <section class="story-detail">
+        <section class="story-detail" aria-labelledby="audio-story-heading">
             <div class="container">
                 <div class="story-detail__grid">
                     <div class="story-detail__content">
-                        <h1 class="story-detail__title">The value of time</h1>
+                        <h1 id="audio-story-heading" class="story-detail__title">The value of time</h1>
                         <p class="story-detail__description">
                             This immersive audio journey explores the tension between modern business and the meaningful moments that define us.
                         </p>
                         
                         <figure class="audio-player">
+                            <figcaption class="visually-hidden">Audio story: The value of time. A full transcript is available to the right.</figcaption>
                             <audio controls class="audio-player__element" preload="metadata" aria-label="The value of time audio story">
                                 <source src="../assets/The value of time-audio story.mp3" type="audio/mpeg">
                                 Your browser does not support the audio element.
@@ -56,20 +59,20 @@
                         </figure>
                     </div>
 
-                    <aside class="story-detail__sidebar">
+                    <aside class="story-detail__sidebar" aria-label="Audio transcript">
                         <article class="transcript">
-                            <h3 class="transcript__title">Audio transcript</h3>
+                            <h2 class="transcript__title">Audio transcript</h2>
                             <div class="transcript__content">
-                                <p><span class="transcript__timestamp">[00:00]</span> Narrator: Once upon a time, there lived a man in a small village who was very worried about his son.</p>
-                                <p><span class="transcript__timestamp">[00:25]</span> Narrator: He just had no skills and it was his way into business by hook so they decided this village.</p>
-                                <p><span class="transcript__timestamp">[00:30]</span> Father: So this is how it works: you wear less simple things.</p>
-                                <p><span class="transcript__timestamp">[00:35]</span> Father: Son, there is a watch. I want to take the cupboard thing is this me.</p>
-                                <p><span class="transcript__timestamp">[00:23]</span> Father: Now, take this watch to the market and see how much they value it is worth.</p>
-                                <p><span class="transcript__timestamp">[01:10]</span> Narrator: After some time, the son came home. The father asked: [01:00] come back and show me.</p>
-                                <p><span class="transcript__timestamp">[01:17]</span> Father: Ah right, put the watch back. [02:30] Now go back to the market, but this time don't sell the price of the watch – ask market the price of the watch.</p>
-                                <p><span class="transcript__timestamp">[03:03]</span> Narrator: The son did as he was told.</p>
-                                <p><span class="transcript__timestamp">[03:11]</span> Narrator: In the market, there was a person regarding watches who praised his work and the family quote it well and here it was very very interesting.</p>
-                                <p><span class="transcript__timestamp">[04:37]</span> Narrator: Finally, the man as at messenger regarding watches who praised his work quote the family and here is a worth thousands if not millions of rupees. As you can quickly hear and easily too much credit you deserve of your life. That's why they need your time wisely.</p>
+                                <p><span class="transcript__timestamp" aria-hidden="true">[00:00]</span> <span class="visually-hidden">0 seconds.</span> Narrator: Once upon a time, there lived a man in a small village who was very worried about his son.</p>
+                                <p><span class="transcript__timestamp" aria-hidden="true">[00:25]</span> <span class="visually-hidden">25 seconds.</span> Narrator: He just had no skills and it was his way into business by hook so they decided this village.</p>
+                                <p><span class="transcript__timestamp" aria-hidden="true">[00:30]</span> <span class="visually-hidden">30 seconds.</span> Father: So this is how it works: you wear less simple things.</p>
+                                <p><span class="transcript__timestamp" aria-hidden="true">[00:35]</span> <span class="visually-hidden">35 seconds.</span> Father: Son, there is a watch. I want to take the cupboard thing is this me.</p>
+                                <p><span class="transcript__timestamp" aria-hidden="true">[00:23]</span> <span class="visually-hidden">23 seconds.</span> Father: Now, take this watch to the market and see how much they value it is worth.</p>
+                                <p><span class="transcript__timestamp" aria-hidden="true">[01:10]</span> <span class="visually-hidden">1 minute 10 seconds.</span> Narrator: After some time, the son came home. The father asked: [01:00] come back and show me.</p>
+                                <p><span class="transcript__timestamp" aria-hidden="true">[01:17]</span> <span class="visually-hidden">1 minute 17 seconds.</span> Father: Ah right, put the watch back. [02:30] Now go back to the market, but this time don't sell the price of the watch – ask market the price of the watch.</p>
+                                <p><span class="transcript__timestamp" aria-hidden="true">[03:03]</span> <span class="visually-hidden">3 minutes 3 seconds.</span> Narrator: The son did as he was told.</p>
+                                <p><span class="transcript__timestamp" aria-hidden="true">[03:11]</span> <span class="visually-hidden">3 minutes 11 seconds.</span> Narrator: In the market, there was a person regarding watches who praised his work and the family quote it well and here it was very very interesting.</p>
+                                <p><span class="transcript__timestamp" aria-hidden="true">[04:37]</span> <span class="visually-hidden">4 minutes 37 seconds.</span> Narrator: Finally, the man as at messenger regarding watches who praised his work quote the family and here is a worth thousands if not millions of rupees. As you can quickly hear and easily too much credit you deserve of your life. That's why they need your time wisely.</p>
                             </div>
                         </article>
                     </aside>
@@ -78,12 +81,12 @@
         </section>
 
         <!-- Video Story Section -->
-        <section class="video-section">
+        <section class="video-section" aria-labelledby="video-story-heading">
             <div class="container">
                 <div class="video-section__grid">
-                    <aside class="video-section__sidebar">
+                    <aside class="video-section__sidebar" aria-label="Video transcript">
                         <article class="transcript">
-                            <h3 class="transcript__title">Video transcript</h3>
+                            <h2 class="transcript__title">Video transcript</h2>
                             <div class="transcript__content transcript__content--scrollable">
                                 <p><span class="transcript__timestamp">[00:13]</span> BJ Miller: We all need a reason to wake up; for me, it took 11,000 volts. One night in college, I climbed atop a commuter train, and the electrical current entered my arm and blew out my feet.</p>
                                 <p><span class="transcript__timestamp">[01:20]</span> BJ Miller: That night began my formal relationship with death and my long run as a patient. I am a physician now—a hospice and palliative medicine doc—so I've seen care from both sides.</p>
@@ -103,12 +106,13 @@
                     </aside>
 
                     <div class="video-section__content">
-                        <h2 class="video-section__title">At the end of our lives, what do we most wish for? For many, it's simply comfort, respect, love. BJ Miller is a palliative care physician who thinks deeply about how to create a dignified, graceful end of life for his patients. Take the time to savor this moving talk, which asks big questions about how we think on death and honor life.</h2>
+                        <h2 id="video-story-heading" class="video-section__title">At the end of our lives, what do we most wish for? For many, it's simply comfort, respect, love. BJ Miller is a palliative care physician who thinks deeply about how to create a dignified, graceful end of life for his patients. Take the time to savor this moving talk, which asks big questions about how we think on death and honor life.</h2>
                         
                         <figure class="video-player">
+                            <figcaption class="visually-hidden">Video: What really matters at the end of life — BJ Miller TED Talk. A full transcript is available to the left.</figcaption>
                             <video controls class="video-player__element" poster="../assets/videothumb.jpg" preload="metadata" aria-label="BJ Miller palliative care TED talk video">
                                 <source src="../assets/What really matters at the end of life _ BJ Miller _ TED.mp4" type="video/mp4">
-                                <track kind="captions" label="English captions" srclang="en">
+                                <track kind="captions" label="English captions" srclang="en" src="">
                                 Your browser does not support the video element.
                             </video>
                         </figure>
@@ -118,8 +122,8 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer__background"></div>
+    <footer class="footer" role="contentinfo">
+        <div class="footer__background" aria-hidden="true"></div>
         <div class="container">
             <div class="footer__content">
                 <div class="footer__brand">

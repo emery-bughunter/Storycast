@@ -10,26 +10,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="header" role="banner">
         <div class="container">
             <div class="header__content">
-                <a href="../index.html" class="logo">
-                    <img src="../assets/logo.svg" alt="StoryCast Logo" width="48" height="48">
+                <a href="../index.html" class="logo" aria-label="StoryCast home">
+                    <img src="../assets/logo.svg" alt="" width="48" height="48">
                 </a>
 
-                <nav class="nav">
+                <nav class="nav" aria-label="Main navigation">
                     <a href="../story/story.html" class="nav__link">Discover</a>
                     <a href="#categories" class="nav__link">categories</a>
-                    <a href="about.html" class="nav__link nav__link--active">about</a>
+                    <a href="about.html" class="nav__link nav__link--active" aria-current="page">about</a>
                 </nav>
 
                 <div class="header__actions">
-                    <search class="search">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <search class="search" role="search">
+                        <label for="site-search-about" class="visually-hidden">Search StoryCast</label>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                             <path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M14 14L11.1 11.1" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <input type="search" placeholder="Search" class="search__input">
+                        <input type="search" id="site-search-about" placeholder="Search" class="search__input">
                     </search>
                     <a href="/signin" class="btn-signin">sign in</a>
                 </div>
@@ -37,12 +39,12 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- mission -->
-        <section class="mission">
+        <section class="mission" aria-labelledby="mission-heading">
             <div class="container">
                 <div class="mission__content">
-                    <h1 class="mission__title">Our mission</h1>
+                    <h1 id="mission-heading" class="mission__title">Our mission</h1>
                     <p class="mission__description">
                         StoryCast aims to provide an inclusive platform where high-fidelity audio and video stories are accessible to everyone.
                     </p>
@@ -54,9 +56,9 @@
         </section>
 
         <!-- aria feature -->
-        <section class="accessibility-features">
+        <section class="accessibility-features" aria-labelledby="a11y-heading">
             <div class="container">
-                <h2 class="section__title">Accessibility Features</h2>
+                <h2 id="a11y-heading" class="section__title">Accessibility Features</h2>
                 <div class="features-grid">
                     <article class="feature-card">
                         <h3 class="feature-card__title">Transcripts</h3>
@@ -104,19 +106,20 @@
         </section>
 
         <!-- newsletter -->
-        <section class="newsletter">
+        <section class="newsletter" aria-labelledby="newsletter-heading">
             <div class="container">
                 <div class="newsletter__content">
-                    <figure class="newsletter__illustration">
-                        <img src="../assets/newsletter-icon.svg" alt="" role="presentation">
+                    <figure class="newsletter__illustration" aria-hidden="true">
+                        <img src="../assets/newsletter-icon.svg" alt="">
                     </figure>
                     
                     <article class="newsletter__text">
-                        <h2 class="newsletter__title">Subscribe to our newsletter for the latest updates and insights.</h2>
+                        <h2 id="newsletter-heading" class="newsletter__title">Subscribe to our newsletter for the latest updates and insights.</h2>
                         <p class="newsletter__subtitle">Stay ahead with the latest updates, insights, and exclusive content.</p>
                         
                         <form class="newsletter__form" aria-label="Newsletter subscription">
                             <fieldset class="form-group">
+                                <legend class="visually-hidden">Newsletter sign-up</legend>
                                 <label for="email" class="visually-hidden">Email address</label>
                                 <input 
                                     type="email" 
@@ -125,7 +128,8 @@
                                     placeholder="Enter your email" 
                                     class="newsletter__input"
                                     required
-                                    aria-required="true">
+                                    aria-required="true"
+                                    autocomplete="email">
                             </fieldset>
                             <button type="submit" class="newsletter__button">Subscribe</button>
                         </form>
@@ -134,10 +138,10 @@
             </div>
         </section>
 
-        <!-- engage sectio -->
-        <section class="engagement">
+        <!-- engage section -->
+        <section class="engagement" aria-labelledby="engagement-heading">
             <div class="container">
-                <h2 class="section__title">How to Engage with StoryCast</h2>
+                <h2 id="engagement-heading" class="section__title">How to Engage with StoryCast</h2>
                 <div class="engagement__grid">
                     <article class="engagement-step">
                         <span class="engagement-step__number">01</span>
@@ -167,8 +171,8 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer__background"></div>
+    <footer class="footer" role="contentinfo">
+        <div class="footer__background" aria-hidden="true"></div>
         <div class="container">
             <div class="footer__content">
                 <div class="footer__brand">

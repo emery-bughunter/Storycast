@@ -10,13 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="header" role="banner">
         <div class="container">
             <div class="header__content">
-                <a href="/" class="logo">
+                <a href="/" class="logo" aria-label="StoryCast home">
                     <div class="logo__icon">
                         <!-- CSS/SVG based logo instead of image -->
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                             <rect width="40" height="40" rx="12" fill="#4F6EF7"/>
                             <path d="M12 28L20 12L28 28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                             <circle cx="20" cy="22" r="3" fill="white"/>
@@ -25,21 +26,22 @@
                     <span class="logo__text">StoryCast</span>
                 </a>
 
-                <nav class="nav">
-                    <a href="story/story.html" class="nav__pill active">Discover</a>
+                <nav class="nav" aria-label="Main navigation">
+                    <a href="story/story.html" class="nav__pill active" aria-current="page">Discover</a>
                     <a href="#categories" class="nav__pill">categories</a>
                     <a href="about/about.html" class="nav__pill">about</a>
                 </nav>
 
                 <div class="header__actions">
-                    <search class="search">
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <search class="search" role="search">
+                        <label for="site-search-home" class="visually-hidden">Search StoryCast</label>
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                             <path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M14 14L11.1 11.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <input type="search" placeholder="Search" class="search__input">
+                        <input type="search" id="site-search-home" placeholder="Search" class="search__input" aria-label="Search StoryCast">
                         <button class="search__voice" aria-label="Voice search">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
                                 <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
                                 <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
                                 <line x1="12" y1="19" x2="12" y2="23"></line>
@@ -49,7 +51,7 @@
                     </search>
                     <a href="/signin" class="btn-signin">
                         <span>sign in</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
@@ -59,25 +61,25 @@
         </div>
     </header>
 
-    <main>
-        <section class="hero hero--home">
+    <main id="main-content">
+        <section class="hero hero--home" aria-labelledby="hero-heading">
             <div class="container container--large">
                 <div class="hero__inner">
-                    <div class="hero__background">
+                    <div class="hero__background" aria-hidden="true">
                          <!-- Two images with clip-path, overlaid by abstract shapes  -->
                          <div class="hero__images">
                             <div class="hero__image-wrapper">
-                                <img src="assets/image 9.jpg" alt="Creative audio" class="hero__image-left">
+                                <img src="assets/image 9.jpg" alt="" class="hero__image-left">
                             </div>
                             <div class="hero__image-wrapper">
-                                <img src="assets/image 3.jpg" alt="Team collaboration" class="hero__image-right">
+                                <img src="assets/image 3.jpg" alt="" class="hero__image-right">
                             </div>
                          </div>
                          <div class="hero__abstract-shapes"></div>
                     </div>
                     <div class="hero__content-wrapper">
                         <div class="hero__content">
-                            <h1 class="hero__title">Dive in, get inspired, and discover the narrative that speaks to you.</h1>
+                            <h1 id="hero-heading" class="hero__title">Dive in, get inspired, and discover the narrative that speaks to you.</h1>
                             <p class="hero__subtitle">Explore our collection of voices and find the story you've been waiting to hear.</p>
                         </div>
                     </div>
@@ -85,12 +87,13 @@
             </div>
         </section>
 
-        <section class="categories" id="categories">
+        <section class="categories" id="categories" aria-labelledby="categories-heading">
             <div class="container container--large">
-                <div class="categories__tabs">
-                    <button class="category-tab active">Audio Story</button>
-                    <button class="category-tab">Documentary</button>
-                    <button class="category-tab">video storytelling</button>
+                <h2 id="categories-heading" class="categories__heading">Browse stories</h2>
+                <div class="categories__tabs" role="tablist" aria-label="Story categories">
+                    <button class="category-tab active" role="tab" aria-selected="true">Audio Story</button>
+                    <button class="category-tab" role="tab" aria-selected="false">Documentary</button>
+                    <button class="category-tab" role="tab" aria-selected="false">video storytelling</button>
                 </div>
                 
                 <div class="cards">
@@ -130,8 +133,8 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer__background"></div>
+    <footer class="footer" role="contentinfo">
+        <div class="footer__background" aria-hidden="true"></div>
         <div class="container container--large">
             <div class="footer__content">
                 <div class="footer__brand">
@@ -160,7 +163,7 @@
                     </nav>
                 </div>
 
-                <nav class="footer__links">
+                <nav class="footer__links" aria-label="Footer navigation">
                     <div class="footer__column">
                         <h4 class="footer__heading">Company</h4>
                         <ul class="footer__list">
@@ -182,12 +185,12 @@
                         <h4 class="footer__heading">Contact</h4>
                         <ul class="footer__list">
                             <li class="footer__contact-item">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                                <span>+123 456 7890</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <a href="tel:+1234567890">+123 456 7890</a>
                             </li>
                             <li class="footer__contact-item">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></svg>
-                                <span>supportstorycast@gmail.com</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></svg>
+                                <a href="mailto:supportstorycast@gmail.com">supportstorycast@gmail.com</a>
                             </li>
                         </ul>
                     </div>
