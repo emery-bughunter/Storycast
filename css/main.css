@@ -62,25 +62,26 @@ select {
 }
 
 .header {
-  padding: 32px 0;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
+  padding: 12px 0;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 100;
   box-shadow: none;
-  border-bottom: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 .header__content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 48px;
+  gap: 24px;
 }
 .header__actions {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .logo {
@@ -102,10 +103,10 @@ select {
 .nav {
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding: 8px;
+  gap: 4px;
+  padding: 0;
   border-radius: 50px;
-  background: rgba(0, 0, 0, 0.04);
+  background: transparent;
 }
 
 .footer {
@@ -210,19 +211,21 @@ select {
 .search {
   display: flex;
   align-items: center;
-  gap: 16px;
-  background: rgba(255, 255, 255, 0.7);
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.04);
   backdrop-filter: blur(8px);
-  padding: 16px 32px;
+  padding: 8px 14px;
   border-radius: 50px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-  width: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: none;
+  transition: all 0.25s ease;
+  width: 190px;
 }
 .search:focus-within {
   background: #ffffff;
-  width: 350px;
+  border-color: #4F6EF7;
+  box-shadow: 0 0 0 3px rgba(79, 110, 247, 0.12);
+  width: 230px;
 }
 .search svg {
   flex-shrink: 0;
@@ -256,42 +259,45 @@ select {
 
 .nav__pill {
   display: inline-flex;
-  padding: 16px 32px;
+  padding: 8px 18px;
   border-radius: 50px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   color: #1a1a1a;
-  background: rgba(0, 0, 0, 0.04);
-  transition: all 0.3s ease;
+  background: transparent;
+  transition: all 0.2s ease;
 }
 .nav__pill:hover {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.06);
+  opacity: 1;
 }
 .nav__pill.active {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(79, 110, 247, 0.1);
+  color: #4F6EF7;
 }
 
 .btn-signin {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 16px 32px;
-  background: rgba(0, 0, 0, 0.06);
+  gap: 8px;
+  padding: 8px 18px;
+  background: #4F6EF7;
   border-radius: 50px;
-  font-size: 14px;
-  color: #1a1a1a;
+  font-size: 13px;
+  color: #ffffff;
   font-weight: 500;
   white-space: nowrap;
   border: none;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   text-decoration: none;
 }
 .btn-signin:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: #3a57e8;
+  opacity: 1;
 }
 .btn-signin svg {
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 50%;
   padding: 2px;
 }
@@ -1044,6 +1050,43 @@ select {
   .engagement-step {
     padding: 32px;
   }
+}
+
+/* ---------------------------------------------------------------------------
+   JS-driven states
+   --------------------------------------------------------------------------- */
+
+/* Header picks up a shadow once the user scrolls */
+.header--scrolled {
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Nav links used on story / about pages */
+.nav__link {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.nav__link:hover {
+  color: #4F6EF7;
+  opacity: 1;
+}
+.nav__link--active,
+.nav__link.active {
+  color: #4F6EF7;
+  font-weight: 600;
+}
+
+/* Voice search pulsing indicator */
+@keyframes voicePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.2); }
+}
+.search__voice.listening {
+  color: #e53e3e;
+  animation: voicePulse 1s ease-in-out infinite;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -25,30 +25,21 @@
                     <span class="logo__text">StoryCast</span>
                 </a>
 
-                <div class="header__right-group">
-                    <div class="header__nav-row">
-                        <nav class="nav">
-                            <a href="story/story.html" class="nav__pill active">Discover</a>
-                            <a href="#categories" class="nav__pill">categories</a>
-                            <a href="about/about.html" class="nav__pill">about</a>
-                            <a href="/signin" class="btn-signin">
-                                <span>sign in</span>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="12" cy="7" r="4"></circle>
-                                </svg>
-                            </a>
-                        </nav>
-                    </div>
-                
+                <nav class="nav">
+                    <a href="story/story.html" class="nav__pill active">Discover</a>
+                    <a href="#categories" class="nav__pill">categories</a>
+                    <a href="about/about.html" class="nav__pill">about</a>
+                </nav>
+
+                <div class="header__actions">
                     <search class="search">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M14 14L11.1 11.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         <input type="search" placeholder="Search" class="search__input">
                         <button class="search__voice" aria-label="Voice search">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
                                 <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
                                 <line x1="12" y1="19" x2="12" y2="23"></line>
@@ -56,6 +47,13 @@
                             </svg>
                         </button>
                     </search>
+                    <a href="/signin" class="btn-signin">
+                        <span>sign in</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -197,5 +195,6 @@
             </div>
         </div>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>
