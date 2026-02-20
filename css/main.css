@@ -61,6 +61,12 @@ a:hover {
 .logo svg {
   display: block;
 }
+.logo img {
+  display: block;
+  border-radius: 50%;
+  background: #f5f5f5;
+  padding: 8px;
+}
 
 .nav {
   display: flex;
@@ -299,6 +305,13 @@ a:hover {
   margin-bottom: 16px;
 }
 .footer__logo svg {
+  flex-shrink: 0;
+}
+.footer__logo img {
+  display: block;
+  border-radius: 50%;
+  background: #f5f5f5;
+  padding: 8px;
   flex-shrink: 0;
 }
 .footer__name {
