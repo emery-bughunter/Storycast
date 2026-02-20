@@ -1,0 +1,557 @@
+// Variables
+$primary-color: #4F6EF7;
+$text-dark: #1a1a1a;
+$text-gray: #666;
+$text-light: #999;
+$bg-light: #f5f5f5;
+$white: #ffffff;
+
+$yellow: #F5E84C;
+$pink: #FFB6D9;
+$blue: #A2C8F5;
+$green: #B8E6D5;
+$mint: #A3DED4;
+
+$font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+$border-radius: 12px;
+$border-radius-sm: 8px;
+$border-radius-lg: 16px;
+
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 48px;
+$spacing-xl: 64px;
+
+// Reset & Base
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    color: $text-dark;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background: $white;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+// Container
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+}
+
+// Header
+.header {
+    padding: $spacing-md 0;
+    background: $white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $spacing-lg;
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: $spacing-md;
+    }
+}
+
+// Logo
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    
+    svg {
+        display: block;
+    }
+}
+
+// Navigation
+.nav {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+    flex: 1;
+    justify-content: center;
+
+    &__link {
+        font-size: 15px;
+        color: $text-gray;
+        font-weight: 500;
+        white-space: nowrap;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+// Search
+.search {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    background: $bg-light;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: 24px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+
+    &:focus-within {
+        border-color: $primary-color;
+        background: $white;
+    }
+
+    svg {
+        flex-shrink: 0;
+    }
+
+    &__input {
+        border: none;
+        outline: none;
+        background: transparent;
+        font-size: 14px;
+        color: $text-dark;
+        width: 120px;
+        font-family: $font-family;
+
+        &::placeholder {
+            color: $text-light;
+        }
+    }
+}
+
+// Sign In Button
+.btn-signin {
+    padding: $spacing-xs $spacing-md;
+    background: $bg-light;
+    border-radius: 24px;
+    font-size: 14px;
+    color: $text-gray;
+    font-weight: 500;
+    white-space: nowrap;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: $primary-color;
+        color: $white;
+        opacity: 1;
+    }
+}
+
+// Hero Section
+.hero {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: $spacing-xl;
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.4) 100%);
+        
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        // Yellow circle
+        &::before {
+            width: 200px;
+            height: 200px;
+            background: $yellow;
+            opacity: 0.6;
+            bottom: 20%;
+            left: 5%;
+        }
+
+        // Pink circle
+        &::after {
+            width: 250px;
+            height: 250px;
+            background: $pink;
+            opacity: 0.5;
+            bottom: 10%;
+            right: 15%;
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 10;
+        max-width: 700px;
+        padding: $spacing-lg;
+    }
+
+    &__title {
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: $spacing-sm;
+        color: $text-dark;
+    }
+
+    &__subtitle {
+        font-size: 18px;
+        color: $text-gray;
+        line-height: 1.6;
+    }
+}
+
+// Categories/Cards Section
+.categories {
+    padding: $spacing-xl 0;
+    background: linear-gradient(to bottom, $white 0%, $bg-light 100%);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: $spacing-lg;
+    padding: $spacing-md 0;
+}
+
+.card {
+    background: $white;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    &__image {
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        background: $bg-light;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        padding: $spacing-md;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: $spacing-sm;
+        color: $text-dark;
+    }
+
+    &__description {
+        font-size: 14px;
+        color: $text-gray;
+        line-height: 1.6;
+
+        p {
+            margin-bottom: $spacing-xs;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        strong {
+            color: $text-dark;
+            font-weight: 600;
+        }
+    }
+}
+
+// Footer
+.footer {
+    position: relative;
+    background: $white;
+    padding: $spacing-xl 0 $spacing-lg;
+    overflow: hidden;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+    &__background {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        z-index: 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                $mint 0%, 
+                $mint 12.5%, 
+                $yellow 12.5%, 
+                $yellow 25%, 
+                transparent 25%, 
+                transparent 37.5%,
+                $green 37.5%,
+                $green 50%,
+                $pink 50%,
+                $pink 62.5%,
+                $blue 62.5%,
+                $blue 75%,
+                transparent 75%
+            );
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        gap: $spacing-xl;
+        flex-wrap: wrap;
+    }
+
+    &__brand {
+        flex: 1;
+        min-width: 280px;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+        margin-bottom: $spacing-sm;
+
+        svg {
+            flex-shrink: 0;
+        }
+    }
+
+    &__name {
+        font-size: 24px;
+        font-weight: 700;
+        color: $text-dark;
+    }
+
+    &__tagline {
+        font-size: 14px;
+        color: $text-gray;
+        margin-bottom: $spacing-md;
+    }
+
+    &__links {
+        display: flex;
+        gap: $spacing-xl;
+        flex-wrap: wrap;
+    }
+
+    &__column {
+        min-width: 150px;
+    }
+
+    &__heading {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: $spacing-sm;
+        color: $text-dark;
+    }
+
+    &__list {
+        list-style: none;
+
+        li {
+            margin-bottom: $spacing-xs;
+
+            a {
+                font-size: 14px;
+                color: $text-gray;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+// Social Icons
+.social-icons {
+    display: flex;
+    gap: $spacing-sm;
+    margin-top: $spacing-md;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $bg-light;
+    border-radius: 50%;
+    color: $text-gray;
+    transition: all 0.3s ease;
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    &:hover {
+        background: $primary-color;
+        color: $white;
+        opacity: 1;
+        transform: translateY(-2px);
+    }
+}
+
+// Responsive Design
+@media (max-width: 992px) {
+    .hero {
+        height: 400px;
+
+        &__title {
+            font-size: 32px;
+        }
+
+        &__subtitle {
+            font-size: 16px;
+        }
+    }
+
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: $spacing-md;
+    }
+
+    .footer__content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        &__content {
+            flex-wrap: wrap;
+            gap: $spacing-sm;
+        }
+    }
+
+    .nav {
+        order: 3;
+        width: 100%;
+        justify-content: flex-start;
+        padding-top: $spacing-sm;
+        gap: $spacing-md;
+    }
+
+    .hero {
+        height: 350px;
+
+        &__title {
+            font-size: 28px;
+        }
+
+        &__subtitle {
+            font-size: 15px;
+        }
+
+        &__content {
+            padding: $spacing-md;
+        }
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .search__input {
+        width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 $spacing-sm;
+    }
+
+    .hero {
+        height: 300px;
+        margin-bottom: $spacing-lg;
+
+        &__title {
+            font-size: 24px;
+        }
+
+        &__subtitle {
+            font-size: 14px;
+        }
+    }
+
+    .footer__links {
+        flex-direction: column;
+        gap: $spacing-md;
+    }
+}
