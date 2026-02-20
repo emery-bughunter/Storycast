@@ -14,85 +14,119 @@
         <div class="container">
             <div class="header__content">
                 <a href="/" class="logo">
-                    <img src="assets/logo.svg" alt="StoryCast Logo" width="48" height="48">
+                    <div class="logo__icon">
+                        <!-- CSS/SVG based logo instead of image -->
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="12" fill="#4F6EF7"/>
+                            <path d="M12 28L20 12L28 28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="20" cy="22" r="3" fill="white"/>
+                        </svg>
+                    </div>
+                    <span class="logo__text">StoryCast</span>
                 </a>
 
-                <nav class="nav">
-                    <a href="story/story.html" class="nav__link">Discover</a>
-                    <a href="#categories" class="nav__link">categories</a>
-                    <a href="#about" class="nav__link">about</a>
-                </nav>
-
-                <div class="header__actions">
-                    <div class="search">
+                <div class="header__right-group">
+                    <div class="header__nav-row">
+                        <nav class="nav">
+                            <a href="story/story.html" class="nav__pill active">Discover</a>
+                            <a href="#categories" class="nav__pill">categories</a>
+                            <a href="about/about.html" class="nav__pill">about</a>
+                            <a href="/signin" class="btn-signin">
+                                <span>sign in</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </a>
+                        </nav>
+                    </div>
+                
+                    <search class="search">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M14 14L11.1 11.1" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 14L11.1 11.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         <input type="search" placeholder="Search" class="search__input">
-                    </div>
-                    <a href="/signin" class="btn-signin">sign in</a>
+                        <button class="search__voice" aria-label="Voice search">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                <line x1="12" y1="19" x2="12" y2="23"></line>
+                                <line x1="8" y1="23" x2="16" y2="23"></line>
+                            </svg>
+                        </button>
+                    </search>
                 </div>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero__background">
-                <img src="assets/wallpapersden.com_abstract-shapes-4k-materialistic_5120x2880.jpg" alt="Hero background" class="hero__image">
-                <div class="hero__overlay"></div>
-            </div>
-            <div class="container">
-                <div class="hero__content">
-                    <h1 class="hero__title">Dive in, get inspired, and discover the narrative that speaks to you.</h1>
-                    <p class="hero__subtitle">Explore our collection of voices and find the story you've been waiting to hear.</p>
+        <section class="hero hero--home">
+            <div class="container container--large">
+                <div class="hero__inner">
+                    <div class="hero__background">
+                         <!-- Two images with clip-path, overlaid by abstract shapes  -->
+                         <div class="hero__images">
+                            <div class="hero__image-wrapper">
+                                <img src="assets/image 9.jpg" alt="Creative audio" class="hero__image-left">
+                            </div>
+                            <div class="hero__image-wrapper">
+                                <img src="assets/image 3.jpg" alt="Team collaboration" class="hero__image-right">
+                            </div>
+                         </div>
+                         <div class="hero__abstract-shapes"></div>
+                    </div>
+                    <div class="hero__content-wrapper">
+                        <div class="hero__content">
+                            <h1 class="hero__title">Dive in, get inspired, and discover the narrative that speaks to you.</h1>
+                            <p class="hero__subtitle">Explore our collection of voices and find the story you've been waiting to hear.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="categories">
-            <div class="container">
+        <section class="categories" id="categories">
+            <div class="container container--large">
+                <div class="categories__tabs">
+                    <button class="category-tab active">Audio Story</button>
+                    <button class="category-tab">Documentary</button>
+                    <button class="category-tab">video storytelling</button>
+                </div>
+                
                 <div class="cards">
-                    <a href="story/story.html" class="card">
-                        <div class="card__image">
-                            <img src="assets/image 1.png" alt="Audio Story">
+                    <article class="card">
+                        <div class="card__image-container">
+                            <img src="assets/image 1.png" alt="Audio Story" class="card__img">
                         </div>
                         <div class="card__content">
-                            <h3 class="card__title">Audio Story</h3>
-                            <div class="card__description">
-                                <p><strong>Thunder for your ears.</strong></p>
-                                <p>Roretur deles sum evoremre void of high-production values that amaze your ears, wherever you are.</p>
-                                <p>Poetry play and joyful, epic.</p>
-                            </div>
+                            <h3 class="card__title">Theater for your ears.</h3>
+                            <p class="card__text">Escape the glare and immerse yourself in high-production audio dramas designed to travel wherever you do.</p>
+                            <p class="card__cta">Press play and get lost.</p>
                         </div>
-                    </a>
+                    </article>
 
-                    <div class="card">
-                        <div class="card__image">
-                            <img src="assets/image 2.png" alt="Documentary">
+                    <article class="card">
+                        <div class="card__image-container">
+                            <img src="assets/image 2.png" alt="Documentary" class="card__img">
                         </div>
                         <div class="card__content">
-                            <h3 class="card__title">Documentary</h3>
-                            <div class="card__description">
-                                <p><strong>Uncover the truth in every note.</strong></p>
-                                <p>Our audio-documented sets rigorous investigative journalism into digestible, gripping aural stories that shape our world. Forget the noise and experience raw, stirring, authentic truthiness. It's audio doc-power. Listen to the evidence.</p>
-                            </div>
+                            <h3 class="card__title">Uncover the truth in every note.</h3>
+                            <p class="card__text">Our audio documentaries pair rigorous investigative journalism with cinematic sound, bringing you closer to the stories that shape our world. Forget the screen and experience history, science, and human experience through a lens of pure sound.</p>
+                            <p class="card__cta">Listen to the evidence.</p>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="card">
-                        <div class="card__image">
-                            <img src="assets/Rectangle 34.jpg" alt="Video Storytelling">
+                    <article class="card">
+                        <div class="card__image-container">
+                            <img src="assets/Rectangle 34.jpg" alt="Video Storytelling" class="card__img">
                         </div>
                         <div class="card__content">
-                            <h3 class="card__title">Video storytelling</h3>
-                            <div class="card__description">
-                                <p><strong>See the story unfold. Our collection of short films blends striking</strong></p>
-                                <p>cinematography with powerful narratives, bringing diverse perspectives and untold stories to life. Immerse into other worlds through the art of visual storytelling</p>
-                            </div>
+                            <h3 class="card__title">See the story unfold. Our collection of short films blends striking</h3>
+                            <p class="card__text">cinematography with powerful narratives, bringing diverse perspectives to life on screen. Experience a window into other worlds through the art of visual storytelling</p>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -100,7 +134,7 @@
 
     <footer class="footer">
         <div class="footer__background"></div>
-        <div class="container">
+        <div class="container container--large">
             <div class="footer__content">
                 <div class="footer__brand">
                     <div class="footer__logo">
@@ -109,63 +143,57 @@
                     </div>
                     <p class="footer__tagline">An Accessible Media Feature Microsite</p>
                     
-                    <div class="social-icons">
+                    <nav class="social-icons" aria-label="Social media">
                         <a href="#" class="social-icon" aria-label="Facebook">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                         </a>
                         <a href="#" class="social-icon" aria-label="Instagram">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                         </a>
-                        <a href="#" class="social-icon" aria-label="Threads">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.426 17.746c-1.158.458-2.398.69-3.691.69-3.128 0-5.482-1.551-5.482-4.482 0-2.016 1.118-3.514 2.986-4.098.89-.276 1.893-.384 3.045-.32.526.029 1.016.097 1.463.203-.233.621-.369 1.275-.407 1.95-.292-.078-.608-.134-.948-.168-1.011-.1-1.846-.013-2.471.255-1.106.475-1.675 1.344-1.675 2.178 0 1.566 1.339 2.482 3.482 2.482.816 0 1.572-.117 2.252-.35.47-.162.886-.375 1.241-.636-.056-.493-.084-.997-.084-1.511 0-2.096.547-3.637 1.626-4.581.778-.68 1.784-1.024 2.993-1.024.517 0 1.01.055 1.476.163.09.021.179.043.267.067v2.177c-.413-.116-.837-.174-1.271-.174-.751 0-1.327.197-1.712.586-.535.542-.806 1.437-.806 2.664 0 .358.017.703.05 1.037.356-.13.687-.288.989-.471.851-.516 1.432-1.271 1.73-2.239.163-.531.245-1.127.245-1.773 0-2.846-1.848-5.204-5.482-5.204-1.793 0-3.403.607-4.529 1.709-1.219 1.193-1.853 2.897-1.853 4.995 0 4.282 2.787 6.982 7.282 6.982 1.486 0 2.876-.266 4.131-.79v2.246z"/>
-                            </svg>
+                        <a href="#" class="social-icon" aria-label="Google">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-2.24 5.36-7.84 5.36-4.8 0-8.72-3.96-8.72-8.8s3.92-8.8 8.72-8.8c2.72 0 4.56 1.16 5.6 2.12l2.56-2.48c-1.64-1.52-4.2-2.44-8.16-2.44-5.52 0-10 4.48-10 10s4.48 10 10 10c5.76 0 9.6-4.04 9.6-9.76 0-.68-.08-1.2-.16-1.72h-9.44z"/></svg>
                         </a>
-                        <a href="#" class="social-icon" aria-label="YouTube">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                            </svg>
+                        <a href="#" class="social-icon" aria-label="X">
+                           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.134l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                         </a>
                         <a href="#" class="social-icon" aria-label="LinkedIn">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
                         </a>
-                    </div>
+                    </nav>
                 </div>
 
-                <div class="footer__links">
+                <nav class="footer__links">
                     <div class="footer__column">
                         <h4 class="footer__heading">Company</h4>
                         <ul class="footer__list">
-                            <li><a href="#about">About us</a></li>
+                            <li><a href="about/about.html">About us</a></li>
                             <li><a href="#services">Services</a></li>
                             <li><a href="#community">Community</a></li>
                             <li><a href="#testimonial">Testimonial</a></li>
                         </ul>
                     </div>
-
                     <div class="footer__column">
                         <h4 class="footer__heading">Our communities</h4>
                         <ul class="footer__list">
                             <li><a href="#mm-communities">MM Communities</a></li>
-                            <li><a href="#mm-space">MM Space</a></li>
+                            <li><a href="#mm-forum">MM Forum</a></li>
                             <li><a href="#mm-chat">MM Chat</a></li>
                         </ul>
                     </div>
-
                     <div class="footer__column">
                         <h4 class="footer__heading">Contact</h4>
                         <ul class="footer__list">
-                            <li><a href="tel:+1234567890">+123 456 7890</a></li>
-                            <li><a href="mailto:support@storycast.com">support@storycast.com</a></li>
+                            <li class="footer__contact-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <span>+123 456 7890</span>
+                            </li>
+                            <li class="footer__contact-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></svg>
+                                <span>supportstorycast@gmail.com</span>
+                            </li>
                         </ul>
                     </div>
-                </div>
+                </nav>
             </div>
         </div>
     </footer>

@@ -1,0 +1,258 @@
+// Reusable Components
+
+// Search
+.search-container {
+  /* This container is largely obsolete in the new header layout but kept for compatibility if reused */
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  background: rgba(255, 255, 255, 0.4); /* More transparent as per design */
+  backdrop-filter: blur(8px);
+  padding: $space-2 $space-3;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all $transition-base;
+  width: auto;
+  min-width: 200px;
+
+  &:focus-within {
+    background: $color-white;
+    box-shadow: $shadow-sm;
+  }
+
+  svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: $color-text-secondary;
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: $font-size-sm;
+    color: $color-text-primary;
+    flex-grow: 1;
+    font-family: $font-primary;
+    width: 100%;
+
+    &::placeholder {
+      color: $color-text-tertiary;
+    }
+  }
+
+  &__voice {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: $color-text-secondary;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 50%;
+    margin-left: $space-1;
+    background: #fdfdfd; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    
+    /* Yellow circle effect from design (optional tweak) */
+    position: relative;
+    
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+// Navigation Pill
+.nav__pill {
+  display: inline-flex;
+  padding: $space-2 $space-4;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  background: rgba(0, 0, 0, 0.04);
+  transition: all $transition-base;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.08);
+  }
+
+  &.active {
+    background: rgba(0, 0, 0, 0.08);
+  }
+}
+
+// Sign-in Button
+.btn-signin {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  padding: $space-2 $space-4;
+  background: rgba(0, 0, 0, 0.04); /* Match nav__pill default */
+  border-radius: 50px;
+  font-size: 0.95rem; /* Match nav__pill font size */
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+  white-space: nowrap;
+  border: none;
+  transition: all $transition-base;
+  text-decoration: none;
+  margin-left: 0.5rem; /* Space between pill and signin */
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.08);
+  }
+
+  svg {
+    stroke-width: 1.5;
+  }
+}
+  &:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  svg {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    padding: 2px;
+  }
+}
+
+// Category Tabs
+.categories__tabs {
+  display: flex;
+  justify-content: center;
+  gap: $space-4;
+  margin-bottom: $space-6;
+}
+
+.category-tab {
+  padding: $space-2 $space-6;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: all $transition-base;
+  box-shadow: $shadow-sm;
+
+  &.active {
+    background: $color-primary-light;
+    color: $color-text-primary;
+  }
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-1px);
+  }
+}
+
+// Card Component
+.card {
+  background: rgba(220, 220, 220, 0.4);
+  backdrop-filter: blur(4px);
+  border-radius: $radius-lg;
+  overflow: hidden;
+  transition: transform $transition-base, box-shadow $transition-base;
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  border: none;
+  padding-bottom: $space-4;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+
+  &__image-container {
+    padding: $space-2;
+    height: 154px;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: $radius-md;
+      box-shadow: $shadow-sm;
+    }
+  }
+
+  &__content {
+    padding: 0 $space-4;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    margin-bottom: $space-2;
+    color: $color-text-primary;
+    line-height: $line-height-tight;
+  }
+
+  &__text {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    line-height: $line-height-relaxed;
+    margin-bottom: $space-2;
+  }
+
+  &__cta {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-text-primary;
+    margin-top: auto;
+  }
+}
+
+// Social Icons
+.social-icons {
+  display: flex;
+  gap: $space-2;
+  margin-top: $space-3;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-bg-light;
+  border-radius: $radius-sm;
+  color: $color-text-secondary;
+  transition: all $transition-base;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    background: $color-primary;
+    color: $color-white;
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+// Section Title
+.section__title {
+  font-size: $font-size-7xl;
+  font-weight: $font-weight-bold;
+  margin-bottom: $space-6;
+  color: $color-text-primary;
+  text-align: center;
+}

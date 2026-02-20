@@ -1,0 +1,248 @@
+// Layout Components
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $space-3;
+
+  &--large {
+    max-width: 1400px;
+  }
+}
+
+// Header
+.header {
+  padding: $space-4 0;
+  background: rgba(255, 255, 255, 0.85); /* Slightly translucent white background */
+  backdrop-filter: blur(12px); /* Glassmorphism effect */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure it stays on top of everything */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Subtle shadow for separation */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all $transition-base;
+
+  &__content {
+    display: flex;
+    align-items: flex-start; 
+    justify-content: space-between;
+    gap: $space-6;
+  }
+
+  &__right-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align content to the right edge */
+    gap: $space-3; /* Tighter spacing between rows */
+    width: 100%;
+  }
+
+  /* Group nav and signin together in one row */
+  &__nav-row {
+      display: flex;
+      align-items: center;
+      gap: $space-4; /* Spacing between nav links and sign in button */
+  }
+
+  /* Remove individual margins now that we have a wrapper */
+  .nav {
+      margin-bottom: 0;
+  }
+
+  .header__actions {
+      margin-bottom: 0;
+  }
+
+  .nav__pill {
+      font-size: 0.95rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      margin-left: 0.5rem;
+  }
+}
+
+// Logo
+.logo {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  margin-top: $space-2; 
+  flex-shrink: 0;
+  text-decoration: none;
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform $transition-base;
+  }
+
+  &__text {
+    font-family: $font-primary;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: $color-text-primary;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, $color-primary 0%, darken($color-primary, 20%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  &:hover {
+    .logo__icon {
+      transform: scale(1.05) rotate(-5deg);
+    }
+    
+    opacity: 1; /* Override default link hover */
+  }
+}
+
+  svg {
+    display: block;
+  }
+
+  img {
+    display: block;
+    border-radius: $radius-md;
+    background: $color-bg-light;
+    padding: $space-1;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+}
+
+// Navigation
+.nav {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-1;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+// Footer
+.footer {
+  position: relative;
+  background: #f0f0f0;
+  padding: $space-8 0 $space-10;
+  overflow: hidden;
+
+  &__background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    z-index: 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg,
+        $color-accent-yellow 0%, $color-accent-yellow 12.5%,
+        $color-accent-green 12.5%, $color-accent-green 25%,
+        $color-accent-mint 25%, $color-accent-mint 37.5%,
+        $color-accent-pink 37.5%, $color-accent-pink 50%,
+        $color-primary-light 50%, $color-primary-light 62.5%,
+        $color-accent-yellow 62.5%, $color-accent-yellow 75%,
+        $color-accent-green 75%, $color-accent-green 87.5%,
+        $color-accent-pink 87.5%
+      );
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    gap: $space-10;
+    flex-wrap: wrap;
+  }
+
+  &__brand {
+    max-width: 300px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    margin-bottom: $space-2;
+
+    img {
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: transparent;
+      padding: 0;
+    }
+  }
+
+  &__name {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+  }
+
+  &__tagline {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    margin-bottom: $space-4;
+  }
+
+  &__links {
+    display: flex;
+    gap: $space-8;
+  }
+
+  &__column {
+    min-width: 150px;
+  }
+
+  &__heading {
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    margin-bottom: $space-4;
+    color: $color-text-primary;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: $space-2;
+
+      a {
+        font-size: $font-size-sm;
+        color: $color-text-secondary;
+        text-decoration: none;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+
+  &__contact-item {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    margin-bottom: $space-2;
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+
+    svg {
+      color: $color-primary;
+      flex-shrink: 0;
+    }
+  }
+}

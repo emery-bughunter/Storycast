@@ -1,0 +1,261 @@
+// Responsive Media Queries
+
+@media (max-width: $breakpoint-lg) {
+  .hero {
+    height: 400px;
+
+    &__title {
+      font-size: $font-size-6xl;
+    }
+
+    &__subtitle {
+      font-size: $font-size-lg;
+    }
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: $space-3;
+  }
+
+  .footer__content {
+    flex-direction: column;
+  }
+
+  .story-detail__grid,
+  .video-section__grid {
+    grid-template-columns: 1fr;
+    gap: $space-4;
+  }
+
+  .story-detail__title {
+    font-size: $font-size-5xl;
+  }
+
+  .video-section__title {
+    font-size: $font-size-2xl;
+  }
+
+  .video-player {
+    max-width: 100%;
+  }
+
+  .transcript {
+    max-height: 400px;
+  }
+
+  // About page responsive
+  .mission__title {
+    font-size: $font-size-7xl;
+  }
+
+  .newsletter__content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .newsletter__illustration {
+    margin: 0 auto;
+  }
+
+  .newsletter__form {
+    justify-content: center;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .header__content {
+    flex-wrap: wrap;
+    gap: $space-2;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: $space-2;
+    gap: $space-3;
+  }
+
+  .hero {
+    height: 350px;
+
+    &__title {
+      font-size: $font-size-5xl;
+    }
+
+    &__subtitle {
+      font-size: $font-size-md;
+    }
+
+    &__content {
+      padding: $space-3;
+    }
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .search__input {
+    width: 80px;
+  }
+
+  .story-detail {
+    padding: $space-4 0;
+
+    &__title {
+      font-size: $font-size-4xl;
+    }
+
+    &__description {
+      font-size: $font-size-lg;
+    }
+  }
+
+  .video-section {
+    padding: $space-4 0;
+
+    &__title {
+      font-size: $font-size-xl;
+    }
+  }
+
+  .video-player {
+    max-width: 100%;
+    margin-top: 12px;
+
+    &__element {
+      max-height: 300px;
+    }
+  }
+
+  .transcript {
+    padding: $space-2;
+    max-height: 350px;
+
+    &__content {
+      font-size: $font-size-xs;
+    }
+  }
+
+  .audio-player__element {
+    height: 40px;
+  }
+
+  // About page responsive
+  .mission {
+    padding: $space-6 0;
+
+    &__title {
+      font-size: $font-size-6xl;
+    }
+
+    &__description {
+      font-size: $font-size-lg;
+    }
+  }
+
+  .accessibility-features,
+  .engagement {
+    padding: $space-6 0;
+  }
+
+  .section__title {
+    font-size: $font-size-5xl;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: $space-3;
+  }
+
+  .newsletter {
+    padding: $space-6 0;
+
+    &__title {
+      font-size: $font-size-4xl;
+    }
+
+    &__input {
+      min-width: 200px;
+    }
+  }
+
+  .engagement__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .container {
+    padding: 0 $space-2;
+  }
+
+  .hero {
+    height: 300px;
+    margin-bottom: $space-6;
+
+    &__title {
+      font-size: $font-size-4xl;
+    }
+
+    &__subtitle {
+      font-size: $font-size-base;
+    }
+  }
+
+  .footer__links {
+    flex-direction: column;
+    gap: $space-3;
+  }
+
+  .mission {
+    padding: $space-5 0;
+
+    &__title {
+      font-size: $font-size-5xl;
+    }
+
+    &__description {
+      font-size: $font-size-md;
+    }
+  }
+
+  .newsletter {
+    padding: $space-5 0;
+
+    &__content {
+      gap: $space-4;
+    }
+
+    &__illustration {
+      height: 150px;
+    }
+
+    &__title {
+      font-size: $font-size-3xl;
+    }
+
+    &__form {
+      flex-direction: column;
+    }
+
+    &__input {
+      min-width: 100%;
+    }
+  }
+
+  .section__title {
+    font-size: $font-size-4xl;
+    margin-bottom: $space-4;
+  }
+
+  .feature-card {
+    padding: $space-3;
+  }
+
+  .engagement-step {
+    padding: $space-4;
+  }
+}
