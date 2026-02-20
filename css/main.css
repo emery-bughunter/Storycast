@@ -220,10 +220,14 @@ a:hover {
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  opacity: 1;
 }
 .card__image {
   width: 100%;
@@ -446,6 +450,247 @@ a:hover {
   .footer__links {
     flex-direction: column;
     gap: 24px;
+  }
+}
+
+/* Story Detail Page Styles */
+.story-detail {
+  padding: 48px 0;
+  background: #ffffff;
+}
+
+.story-detail__grid {
+  display: grid;
+  grid-template-columns: 1fr 450px;
+  gap: 48px;
+  margin-bottom: 48px;
+  align-items: start;
+}
+
+.story-detail__title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.story-detail__description {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* Audio Player */
+.audio-player {
+  width: 100%;
+  padding: 24px;
+  background: #f5f5f5;
+  border-radius: 12px;
+}
+
+.audio-player__element {
+  width: 100%;
+  outline: none;
+  height: 48px;
+}
+
+.audio-player__element::-webkit-media-controls-panel {
+  background-color: #ffffff;
+}
+
+.audio-player__element:focus {
+  outline: 3px solid #4F6EF7;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Transcript */
+.transcript {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 24px;
+  height: fit-content;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.transcript__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a1a1a;
+}
+
+.transcript__content {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #666;
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 8px;
+}
+
+.transcript__content--scrollable {
+  max-height: none;
+}
+
+.transcript__content p {
+  margin-bottom: 12px;
+}
+
+.transcript__content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.transcript__content::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 3px;
+}
+
+.transcript__content::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 3px;
+}
+
+.transcript__content::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+.transcript__timestamp {
+  color: #4F6EF7;
+  font-weight: 600;
+  margin-right: 4px;
+  display: inline-block;
+}
+
+/* Video Section */
+.video-section {
+  padding: 48px 0;
+  background: #fafafa;
+}
+
+.video-section__grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.video-section__sidebar {
+  order: 1;
+}
+
+.video-section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  order: 2;
+}
+
+.video-section__title {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #1a1a1a;
+}
+
+/* Video Player */
+.video-player {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  background: #000;
+  margin-top: 16px;
+}
+
+.video-player__element {
+  width: 100%;
+  display: block;
+  max-height: 400px;
+  background: #000;
+  outline: none;
+}
+
+.video-player__element::-webkit-media-controls-panel {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.video-player__element:focus {
+  outline: 3px solid #4F6EF7;
+  outline-offset: 2px;
+}
+
+/* Responsive for Story Page */
+@media (max-width: 992px) {
+  .story-detail__grid,
+  .video-section__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .story-detail__title {
+    font-size: 28px;
+  }
+
+  .video-section__title {
+    font-size: 20px;
+  }
+
+  .video-player {
+    max-width: 100%;
+  }
+
+  .transcript {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .story-detail {
+    padding: 32px 0;
+  }
+
+  .story-detail__title {
+    font-size: 24px;
+  }
+
+  .story-detail__description {
+    font-size: 16px;
+  }
+
+  .video-section {
+    padding: 32px 0;
+  }
+
+  .video-section__title {
+    font-size: 18px;
+  }
+
+  .video-player {
+    max-width: 100%;
+    margin-top: 12px;
+  }
+
+  .video-player__element {
+    max-height: 300px;
+  }
+
+  .transcript {
+    padding: 16px;
+    max-height: 350px;
+  }
+
+  .transcript__content {
+    font-size: 12px;
+  }
+
+  .audio-player__element {
+    height: 40px;
   }
 }
 
