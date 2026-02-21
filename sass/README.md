@@ -4,6 +4,10 @@
 
 This project uses Sass (SCSS syntax) with a modular architecture following BEM methodology and design token principles.
 
+## Design Reference
+
+- **Figma**: [StoryCast – Figma Design File](https://www.figma.com/design/0waGbU9yEQRbf9nK1ZTCLc/Storycast?node-id=5-8&t=QaeiI8pT2gmp8Y0Q-1)
+
 ## File Structure
 
 ```
