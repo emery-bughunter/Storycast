@@ -1,5 +1,4 @@
-// Responsive Media Queries
-
+// responsive media query
 @media (max-width: $breakpoint-lg) {
   .hero {
     height: 400px;
@@ -44,7 +43,7 @@
     max-height: 400px;
   }
 
-  // About page responsive
+  // about page
   .mission__title {
     font-size: $font-size-7xl;
   }
@@ -142,8 +141,6 @@
   .audio-player__element {
     height: 40px;
   }
-
-  // About page responsive
   .mission {
     padding: $space-6 0;
 

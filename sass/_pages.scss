@@ -1,14 +1,6 @@
-// Page-Specific Styles
 
-// ========================================
-// Home Page
-// ========================================
-
-// Hero Section
 .hero--home {
   margin-bottom: $space-12; 
-
-  /* New Layout for Hero Images similar to Figma */
   .hero__inner {
     position: relative;
     border-radius: 60px;
@@ -16,7 +8,7 @@
     height: 500px; 
     background: #f0f0f0;
     box-shadow: $shadow-lg;
-    display: flex; /* Flex layout to hold side-by-side content */
+    display: flex; 
   }
 
   .hero__background {
@@ -26,44 +18,43 @@
     height: 100%;
   }
 
-  /* Container that holds the two images */
   .hero__images {
     position: absolute;
     inset: 0;
     display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    align-items: center; 
+    justify-content: center; 
     width: 100%;
     height: 100%;
-    z-index: 1; /* Behind text, above background */
-    gap: 20px; /* Space between images */
-    padding: 0 40px; /* Padding to prevent touching edges */
+    z-index: 1; 
+    gap: 20px; 
+    padding: 0 40px; 
   }
 
   .hero__image-wrapper {
     position: relative;
-    height: 80%; /* Don't fill full height, let background show */
-    width: 45%; /* Share width */
+    height: 80%; 
+    width: 45%; 
     overflow: hidden;
-    border-radius: 12px; /* Slight rounded corners for photos */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Shadow for depth */
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
     
-    /* First image (Left side) */
+ 
     &:first-child {
-      transform: rotate(-3deg); /* Slight rotation */
+      transform: rotate(-3deg); 
       z-index: 1;
       width: 40%;
-      clip-path: none; /* Remove clip path */
+      clip-path: none;
     }
     
-    /* Second image (Right side) */
+    
     &:last-child {
       flex-grow: 1;
       width: 50%; 
-      margin-left: -20px; /* Slight overlap */
-      transform: rotate(2deg); /* Slight rotation */
+      margin-left: -20px; 
+      transform: rotate(2deg);
       z-index: 2;
-      clip-path: none; /* Remove clip path */
+      clip-path: none;
     }
 
     img {
@@ -81,7 +72,7 @@
     }
   }
 
-  /* Abstract Shapes Overlay */
+  
   .hero__abstract-shapes {
     display: none;
   }
@@ -125,8 +116,6 @@
   }
 }
 
-// Categories Section (Features Window)
-/* Reverted to original simpler styles */
 .categories {
   padding: $space-8 0;
 }
@@ -166,12 +155,6 @@
   padding: $space-3 0;
 }
 
-// ========================================
-// Story Detail Page
-// ========================================
-// ========================================
-// Story Detail Page
-// ========================================
 .story-detail {
   padding: $space-6 0;
   background: $color-white;
@@ -200,7 +183,7 @@
   }
 }
 
-// Audio Player
+// audio  
 .audio-player {
   width: 100%;
   padding: $space-3;
@@ -225,7 +208,7 @@
   }
 }
 
-// Transcript
+// transcript
 .transcript {
   background: $color-bg-light;
   border-radius: $radius-md;
@@ -286,7 +269,7 @@
   }
 }
 
-// Video Section
+// Video
 .video-section {
   padding: $space-6 0;
   background: $color-bg-lighter;
@@ -316,8 +299,6 @@
     color: $color-text-primary;
   }
 }
-
-// Video Player
 .video-player {
   width: 100%;
   max-width: 600px;
@@ -346,9 +327,8 @@
   }
 }
 
-// ========================================
-// About Page
-// ========================================
+
+// about page
 .mission {
   padding: $space-8 0;
   background: linear-gradient(135deg, 

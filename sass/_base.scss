@@ -1,5 +1,4 @@
-// Base Styles
-
+// base
 * {
   margin: 0;
   padding: 0;
@@ -45,7 +44,7 @@ select {
   font-family: $font-primary;
 }
 
-// Visually hidden class for accessibility
+//  hidden class 
 .visually-hidden {
   position: absolute;
   width: 1px;

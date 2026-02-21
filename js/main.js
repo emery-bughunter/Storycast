@@ -61,14 +61,12 @@ function initSmoothScroll() {
     });
   });
 }
-
-// ------------------------------------------
 function initActiveNav() {
   const currentPath = window.location.pathname;
   const normPath = currentPath.replace(/^\//, '').split('?')[0].split('#')[0];
 
   document.querySelectorAll('.nav__link, .nav__pill').forEach((link) => {
-    // If already marked active in HTML, ensure aria-current is set too
+
     if (link.classList.contains('active') || link.getAttribute('aria-current') === 'page') {
       link.setAttribute('aria-current', 'page');
       return;
