@@ -1,15 +1,8 @@
 # StoryCast
 
-An Accessible Media Feature Microsite - A modern, responsive website showcasing audio stories, documentaries, and video storytelling content.
+a accessible websiteto view stories complied fromsimple html scss and js
 
-## Features
-
-- **Responsive Design**: Optimized for all screen sizes (mobile, tablet, desktop)
-- **Modern UI**: Clean interface with smooth animations and hover effects
-- **Accessible**: Built with semantic HTML and accessibility in mind
-- **SCSS Architecture**: Organized and maintainable styling with variables and mixins
-
-## Project Structure
+## project Structure
 
 ```
 storycast/
@@ -23,14 +16,12 @@ storycast/
     └── main.css        # Compiled CSS (auto-generated)
 ```
 
-## Technologies Used
+## languages used
 
 - HTML5
 - CSS3
 - SCSS/Sass
-- Google Fonts (Inter)
-
-## Development
+- js
 
 ### Prerequisites
 
@@ -61,30 +52,7 @@ storycast/
 
 5. Open `index.html` in your browser
 
-## Design System
-
-### Colors
-
-- Primary: `#4F6EF7` (Blue)
-- Yellow: `#F5E84C`
-- Pink: `#FFB6D9`
-- Blue: `#A2C8F5`
-- Green: `#B8E6D5`
-- Mint: `#A3DED4`
-
-### Typography
-
-- Font Family: Inter
-- Heading sizes: 42px (hero), 24px (footer brand), 20px (cards)
-- Body text: 14-18px
-
-### Spacing
-
-- XS: 8px
-- SM: 16px
-- MD: 24px
-- LG: 48px
-- XL: 64px
+## accessibility checlist
 
 ## Browser Support
 
@@ -92,7 +60,5 @@ storycast/
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
-
-## License
 
 © 2026 StoryCast. All rights reserved.
