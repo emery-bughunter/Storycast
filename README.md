@@ -18,8 +18,8 @@ storycast/
 
 ## Design & Planning
 
-- **Figma**: [StoryCast – Design File](https://www.figma.com/design/0waGbU9yEQRbf9nK1ZTCLc/Storycast?node-id=5-8&t=QaeiI8pT2gmp8Y0Q-1)
-- **Sitemap**: [View Sitemap](https://drive.google.com/file/d/1xTVrE3UC6EA_zLMt57ag6j-ca9UdidNR/view?usp=sharing)
+- **Figma**: (https://www.figma.com/design/0waGbU9yEQRbf9nK1ZTCLc/Storycast?node-id=5-8&t=QaeiI8pT2gmp8Y0Q-1)
+- **Sitemap**:(https://drive.google.com/file/d/1xTVrE3UC6EA_zLMt57ag6j-ca9UdidNR/view?usp=sharing)
 
 ## languages used
 
